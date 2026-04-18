@@ -5,13 +5,14 @@
 enum class InputType { EOI = 0, SEMI, PLUS, TIMES, LP, RP, NUM_OR_ID };
 
 class Lexer {
- public:
-  Lexer();
-
- private:
+private:
   std::string buffer;
   int column;
   int row;
+
+public:
+  Lexer();
+  void analizeFile(std::string filename);
 };
 
 #endif
