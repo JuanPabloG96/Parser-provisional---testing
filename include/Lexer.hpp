@@ -1,18 +1,35 @@
-#ifndef LEXER_HPP
-#define LEXER_HPP
-
+#pragma once
 #include <string>
-enum class InputType { EOI = 0, SEMI, PLUS, TIMES, LP, RP, NUM_OR_ID };
+#include <vector>
+
+enum class InputType {
+  EOI = 0,
+  SEMI,
+  PLUS,
+  SUB,
+  TIMES,
+  DIV,
+  LP,
+  RP,
+  NUM_OR_ID
+};
+struct data {
+  std::string token;
+  InputType type;
+};
 
 class Lexer {
 private:
   std::string buffer;
   int column;
   int row;
+  std::vector<data> tokenList;
 
 public:
   Lexer();
   void analizeFile(std::string filename);
-};
+  void tokenize(char c);
+  void tokenizeEnd();
 
-#endif
+  std::vector<data> getTokenList();
+};
