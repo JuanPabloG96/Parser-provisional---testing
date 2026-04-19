@@ -45,8 +45,9 @@ void Lexer::tokenize(char c) {
       tokenList.push_back({buffer, InputType::NUM_OR_ID, row, column});
       buffer.clear();
     }
-    data dataInstance;
-    dataInstance.token = c;
+
+    data dataInstance = {std::string(1, c), InputType::EOI, row, column};
+
     switch (c) {
       case ';':
         dataInstance.type = InputType::SEMI;
