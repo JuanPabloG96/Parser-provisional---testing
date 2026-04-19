@@ -78,6 +78,7 @@ void Parser::factor() {
     std::cout << "( ->";
     advance();
     expression();
+
     if (match(InputType::RP)) {
       std::cout << " ) ->";
       advance();

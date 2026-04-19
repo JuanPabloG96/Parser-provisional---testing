@@ -3,7 +3,7 @@
 #include <fstream>
 #include <iostream>
 
-Lexer::Lexer() : buffer(""), column(0), row(0) {
+Lexer::Lexer() : buffer(""), column(0), row(1) {
 }
 
 void Lexer::analizeFile(std::string filename) {

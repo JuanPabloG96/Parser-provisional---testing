@@ -3,7 +3,7 @@
 
 int main() {
   Lexer lexer;
-  std::string filename = "../docs/simpleInput.txt";
+  std::string filename = "../docs/errorsInput.txt";
 
   lexer.analizeFile(filename);
   std::vector<data> tokens = lexer.getTokenList();
