@@ -8,4 +8,4 @@ cd build || exit 1
 cmake ..
 bear -- make
 
-echo "Building project complete!"
+echo -e "Building project complete!\n"
