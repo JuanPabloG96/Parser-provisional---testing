@@ -16,16 +16,18 @@ enum class InputType {
 struct data {
   std::string token;
   InputType type;
+  int row;
+  int column;
 };
 
 class Lexer {
-private:
+ private:
   std::string buffer;
   int column;
   int row;
   std::vector<data> tokenList;
 
-public:
+ public:
   Lexer();
   void analizeFile(std::string filename);
   void tokenize(char c);
